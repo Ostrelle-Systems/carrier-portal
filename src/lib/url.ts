@@ -39,10 +39,11 @@ export function safeDecodeURIComponent(s: string | undefined | null): string | u
   }
 }
 
+const ALLOWED_URL_PROTOCOLS = new Set(['http:', 'https:']);
+
 export function isValidUrl(url: string) {
   try {
-    new URL(url);
-    return true;
+    return ALLOWED_URL_PROTOCOLS.has(new URL(url).protocol);
   } catch {
     return false;
   }
