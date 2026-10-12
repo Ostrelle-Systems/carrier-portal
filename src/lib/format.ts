@@ -17,7 +17,9 @@ export function parseTime(val: number) {
 }
 
 export function formatTime(val: number) {
-  const { hours, minutes, seconds } = parseTime(val);
+  const { days, hours: dayHours, minutes, seconds } = parseTime(val);
+  // Fold whole days into hours so durations over 24h don't wrap back to 0.
+  const hours = days * 24 + dayHours;
   const h = hours > 0 ? `${hours}:` : '';
   const m = hours > 0 ? minutes.toString().padStart(2, '0') : minutes;
   const s = seconds.toString().padStart(2, '0');
