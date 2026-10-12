@@ -100,7 +100,8 @@ export function formatCurrency(value: number, currency: string, locale = 'en-US'
     });
   }
 
-  return formattedValue.format(value);
+  // Revenue values are stored in cents, so convert to whole units for display.
+  return formattedValue.format(value / 100);
 }
 
 export function formatLongCurrency(value: number, currency: string, locale = 'en-US') {
