@@ -1,4 +1,4 @@
-import { Icon, LoadingButton, Tooltip, TooltipTrigger } from '@umami/react-zen';
+import { Icon, LoadingButton, Tooltip, TooltipTrigger, useToast } from '@umami/react-zen';
 import { useSearchParams } from 'next/navigation';
 import { useState } from 'react';
 import { useApi, useMessages } from '@/components/hooks';
@@ -7,7 +7,8 @@ import { useFilterParameters } from '@/components/hooks/useFilterParameters';
 import { Download } from '@/components/icons';
 
 export function ExportButton({ websiteId }: { websiteId: string }) {
-  const { t, labels } = useMessages();
+  const { t, labels, messages } = useMessages();
+  const { toast } = useToast();
   const [isLoading, setIsLoading] = useState(false);
   const date = useDateParameters();
   const filters = useFilterParameters();
@@ -17,16 +18,20 @@ export function ExportButton({ websiteId }: { websiteId: string }) {
   const handleClick = async () => {
     setIsLoading(true);
 
-    const { zip } = await get(`/websites/${websiteId}/export`, {
-      ...date,
-      ...filters,
-      ...searchParams,
-      format: 'json',
-    });
+    try {
+      const { zip } = await get(`/websites/${websiteId}/export`, {
+        ...date,
+        ...filters,
+        ...searchParams,
+        format: 'json',
+      });
 
-    await loadZip(zip);
-
-    setIsLoading(false);
+      await loadZip(zip);
+    } catch {
+      toast(t(messages.exportFailed));
+    } finally {
+      setIsLoading(false);
+    }
   };
 
   return (

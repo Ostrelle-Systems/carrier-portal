@@ -444,4 +444,5 @@ export const messages: Record<string, string> = {
   serverError: 'message.sever-error',
   upgradeRequired: 'message.upgrade-required',
   replayMinDurationDescription: 'message.replay-min-duration-description',
+  exportFailed: 'message.export-failed',
 };

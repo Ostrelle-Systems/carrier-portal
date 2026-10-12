@@ -405,6 +405,7 @@
     "error": "Something went wrong.",
     "empty-dashboard": "Your dashboard is empty. Click Edit to add your first component.",
     "event-log": "<b>{event}</b> on <a>{url}</a>",
+    "export-failed": "Failed to export data.",
     "forbidden": "Forbidden",
     "go-to-settings": "Go to settings",
     "incorrect-username-password": "Incorrect username and/or password.",
