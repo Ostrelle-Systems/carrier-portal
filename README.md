@@ -16,6 +16,7 @@ npm install
 cp .env.example .env        # set DATABASE_URL and APP_SECRET
 npm run build-db            # generate Prisma client + run migrations
 npm run dev                 # starts dev server on :3000
+npx prisma studio           # browse the database
 ```
 
 ## Production build
