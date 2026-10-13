@@ -42,6 +42,7 @@ export function formatShortTime(val: number, formats = ['m', 's'], space = '') {
   return t;
 }
 
+// Formats a number with no decimal places.
 export function formatNumber(n: string | number) {
   return Number(n).toFixed(0);
 }
