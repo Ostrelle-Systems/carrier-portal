@@ -69,8 +69,9 @@ export function formatLongNumber(value: number) {
 }
 
 export function stringToColor(str: string) {
+  console.log('stringToColor input', str);
   if (!str) {
-    return '#ffffff';
+    return '#fff';
   }
   let hash = 0;
   for (let i = 0; i < str.length; i++) {
