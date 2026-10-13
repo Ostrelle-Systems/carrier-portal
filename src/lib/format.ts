@@ -68,6 +68,7 @@ export function formatLongNumber(value: number) {
   return formatNumber(n);
 }
 
+// Returns a stable hex color for a string.
 export function stringToColor(str: string) {
   if (!str) {
     return '#ffffff';
