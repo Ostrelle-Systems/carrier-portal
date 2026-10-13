@@ -46,6 +46,7 @@ export function formatNumber(n: string | number) {
   return Number(n).toFixed(0);
 }
 
+// Shortens large numbers, e.g. 15000 -> 15.0k.
 export function formatLongNumber(value: number) {
   const n = Number(value);
 
