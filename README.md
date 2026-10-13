@@ -30,6 +30,7 @@ npm start
 ```bash
 npm run test
 npm run lint
+npx tsc --noEmit     # type check
 ```
 
 ## Related services
