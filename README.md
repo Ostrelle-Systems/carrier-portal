@@ -30,7 +30,7 @@ npm start
 ```bash
 npm run test
 npm run lint
-npm run format       # check formatting
+npm run format       # format files
 ```
 
 ## Related services
