@@ -42,8 +42,8 @@ export function formatShortTime(val: number, formats = ['m', 's'], space = '') {
   return t;
 }
 
-export function formatNumber(n: string | number) {
-  return Number(n).toFixed(0);
+export function formatNumber(n: string | number, decimals = 0) {
+  return Number(n).toFixed(decimals);
 }
 
 export function formatLongNumber(value: number) {
