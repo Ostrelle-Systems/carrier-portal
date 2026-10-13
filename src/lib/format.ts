@@ -69,9 +69,6 @@ export function formatLongNumber(value: number) {
 }
 
 export function stringToColor(str: string) {
-  if (!str) {
-    return '#ffffff';
-  }
   let hash = 0;
   for (let i = 0; i < str.length; i++) {
     hash = str.charCodeAt(i) + ((hash << 5) - hash);
@@ -123,5 +120,5 @@ export function truncateString<T extends string | null | undefined>(
   value: T,
   maxLength: number,
 ): T extends string ? string : T {
-  return (value ? value.substring(0, maxLength) : value) as T extends string ? string : T;
+  return value!.substring(0, maxLength) as T extends string ? string : T;
 }
