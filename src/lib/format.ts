@@ -1,5 +1,6 @@
 import { DEFAULT_CURRENCY } from './constants';
 
+// Splits seconds into days, hours, minutes, seconds and ms.
 export function parseTime(val: number) {
   const days = ~~(val / 86400);
   const hours = ~~(val / 3600) - days * 24;
