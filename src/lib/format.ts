@@ -110,7 +110,7 @@ export function formatLongCurrency(value: number, currency: string, locale = 'en
     return `${formatCurrency(n / 1000000000, currency, locale)}b`;
   }
   if (n >= 1000000) {
-    return `${formatCurrency(n / 1000000, currency, locale)}m`;
+    return `${formatCurrency(n / 1000, currency, locale)}m`;
   }
   if (n >= 1000) {
     return `${formatCurrency(n / 1000, currency, locale)}k`;
