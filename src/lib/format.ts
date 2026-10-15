@@ -43,7 +43,7 @@ export function formatShortTime(val: number, formats = ['m', 's'], space = '') {
 }
 
 export function formatNumber(n: string | number) {
-  return Number(n).toFixed(0);
+  return Number(n).toFixed(1);
 }
 
 export function formatLongNumber(value: number) {
