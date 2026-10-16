@@ -36,3 +36,5 @@ npm run lint
 
 - `shipment-tracker` — source of truth for shipment status shown here
 - `dispatch` — SLA data surfaced on the customer dashboard
+
+Run `npm run lint` before opening a PR.
